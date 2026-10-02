@@ -1,0 +1,739 @@
+{
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "states": [
+    {
+      "name": "Andhra Pradesh",
+      "values": [
+        1899,
+        1875,
+        2341,
+        2341,
+        2528
+      ]
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "values": [
+        30,
+        47,
+        14,
+        24,
+        78
+      ]
+    },
+    {
+      "name": "Assam",
+      "values": [
+        3530,
+        4846,
+        1733,
+        909,
+        408
+      ]
+    },
+    {
+      "name": "Bihar",
+      "values": [
+        1512,
+        1413,
+        1621,
+        4450,
+        6380
+      ]
+    },
+    {
+      "name": "Chhattisgarh",
+      "values": [
+        297,
+        352,
+        439,
+        473,
+        660
+      ]
+    },
+    {
+      "name": "Goa",
+      "values": [
+        40,
+        36,
+        90,
+        86,
+        77
+      ]
+    },
+    {
+      "name": "Gujarat",
+      "values": [
+        1283,
+        1536,
+        1417,
+        1995,
+        1592
+      ]
+    },
+    {
+      "name": "Haryana",
+      "values": [
+        656,
+        622,
+        681,
+        751,
+        1815
+      ]
+    },
+    {
+      "name": "Himachal Pradesh",
+      "values": [
+        98,
+        70,
+        77,
+        127,
+        148
+      ]
+    },
+    {
+      "name": "Jharkhand",
+      "values": [
+        1204,
+        953,
+        967,
+        1079,
+        1423
+      ]
+    },
+    {
+      "name": "Karnataka",
+      "values": [
+        10741,
+        8136,
+        12556,
+        21889,
+        21993
+      ]
+    },
+    {
+      "name": "Kerala",
+      "values": [
+        426,
+        626,
+        773,
+        3295,
+        2962
+      ]
+    },
+    {
+      "name": "Madhya Pradesh",
+      "values": [
+        699,
+        589,
+        826,
+        685,
+        1081
+      ]
+    },
+    {
+      "name": "Maharashtra",
+      "values": [
+        5496,
+        5562,
+        8249,
+        8103,
+        9922
+      ]
+    },
+    {
+      "name": "Manipur",
+      "values": [
+        79,
+        67,
+        18,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "Meghalaya",
+      "values": [
+        142,
+        107,
+        75,
+        64,
+        97
+      ]
+    },
+    {
+      "name": "Mizoram",
+      "values": [
+        13,
+        30,
+        1,
+        31,
+        50
+      ]
+    },
+    {
+      "name": "Nagaland",
+      "values": [
+        8,
+        8,
+        4,
+        2,
+        14
+      ]
+    },
+    {
+      "name": "Odisha",
+      "values": [
+        1931,
+        2037,
+        1983,
+        2348,
+        2501
+      ]
+    },
+    {
+      "name": "Punjab",
+      "values": [
+        378,
+        551,
+        697,
+        511,
+        888
+      ]
+    },
+    {
+      "name": "Rajasthan",
+      "values": [
+        1354,
+        1504,
+        1833,
+        2435,
+        1527
+      ]
+    },
+    {
+      "name": "Sikkim",
+      "values": [
+        0,
+        0,
+        26,
+        12,
+        15
+      ]
+    },
+    {
+      "name": "Tamil Nadu",
+      "values": [
+        782,
+        1076,
+        2082,
+        4121,
+        5793
+      ]
+    },
+    {
+      "name": "Telangana",
+      "values": [
+        5024,
+        10303,
+        15297,
+        18236,
+        27230
+      ]
+    },
+    {
+      "name": "Tripura",
+      "values": [
+        34,
+        24,
+        30,
+        36,
+        33
+      ]
+    },
+    {
+      "name": "Uttar Pradesh",
+      "values": [
+        11097,
+        8829,
+        10117,
+        10794,
+        11073
+      ]
+    },
+    {
+      "name": "Uttarakhand",
+      "values": [
+        243,
+        718,
+        559,
+        494,
+        543
+      ]
+    },
+    {
+      "name": "West Bengal",
+      "values": [
+        712,
+        513,
+        401,
+        309,
+        282
+      ]
+    },
+    {
+      "name": "A&N Islands",
+      "values": [
+        5,
+        8,
+        28,
+        47,
+        28
+      ]
+    },
+    {
+      "name": "Chandigarh",
+      "values": [
+        17,
+        15,
+        27,
+        23,
+        116
+      ]
+    },
+    {
+      "name": "D&N Haveli and Daman & Diu",
+      "values": [
+        3,
+        5,
+        5,
+        6,
+        5
+      ]
+    },
+    {
+      "name": "Delhi",
+      "values": [
+        168,
+        356,
+        685,
+        407,
+        404
+      ]
+    },
+    {
+      "name": "Jammu & Kashmir",
+      "values": [
+        120,
+        154,
+        173,
+        185,
+        114
+      ]
+    },
+    {
+      "name": "Ladakh",
+      "values": [
+        1,
+        5,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "Lakshadweep",
+      "values": [
+        3,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "name": "Puducherry",
+      "values": [
+        10,
+        0,
+        64,
+        147,
+        142
+      ]
+    },
+    {
+      "name": "All India",
+      "values": [
+        50035,
+        52974,
+        65893,
+        86420,
+        101928
+      ]
+    }
+  ],
+  "heads": [
+    {
+      "name": "Tampering computer source documents",
+      "values": [
+        338,
+        55,
+        65,
+        71,
+        162
+      ]
+    },
+    {
+      "name": "Computer Related Offences",
+      "values": [
+        21926,
+        19915,
+        23894,
+        35329,
+        36920
+      ]
+    },
+    {
+      "name": "Cyber Terrorism",
+      "values": [
+        26,
+        15,
+        12,
+        11,
+        18
+      ]
+    },
+    {
+      "name": "Publication/transmission of obscene / sexually explicit act in electronic form",
+      "values": [
+        6308,
+        6598,
+        6896,
+        7893,
+        6990
+      ]
+    },
+    {
+      "name": "Interception or Monitoring or decryption of Information",
+      "values": [
+        7,
+        2,
+        1,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "Un-authorized access/attempt to access to protected computer system",
+      "values": [
+        2,
+        3,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "Breach of Confidentiality & Privacy",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        37
+      ]
+    },
+    {
+      "name": "Publication of Electronic Signatures for fraudulent purposes",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        5
+      ]
+    },
+    {
+      "name": "Abetment to Commit Offences",
+      "values": [
+        1,
+        7,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "name": "Attempt to Commit Offences",
+      "values": [
+        18,
+        5,
+        18,
+        11,
+        14
+      ]
+    },
+    {
+      "name": "Other Sections of IT Act",
+      "values": [
+        1017,
+        827,
+        1017,
+        920,
+        718
+      ]
+    },
+    {
+      "name": "Total Offences under I.T. Act",
+      "values": [
+        29643,
+        27427,
+        31908,
+        44237,
+        44872
+      ]
+    },
+    {
+      "name": "Abetment of Suicide (Online)",
+      "values": [
+        10,
+        10,
+        24,
+        30,
+        12
+      ]
+    },
+    {
+      "name": "Cyber Stalking/Bullying of Women/Children",
+      "values": [
+        872,
+        1176,
+        1471,
+        1305,
+        1240
+      ]
+    },
+    {
+      "name": "Sexual Intercourse by Deceitful Means",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        99
+      ]
+    },
+    {
+      "name": "Organized Cyber Crimes",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        60
+      ]
+    },
+    {
+      "name": "Publishing false or misleading information jeopardizing the Sovereignty Unity and integrity or security of India",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        2
+      ]
+    },
+    {
+      "name": "Data theft",
+      "values": [
+        98,
+        170,
+        97,
+        113,
+        88
+      ]
+    },
+    {
+      "name": "Fraud",
+      "values": [
+        10395,
+        14007,
+        17470,
+        19466,
+        29758
+      ]
+    },
+    {
+      "name": "Cheating",
+      "values": [
+        4480,
+        6343,
+        10509,
+        16943,
+        19296
+      ]
+    },
+    {
+      "name": "Forgery",
+      "values": [
+        582,
+        198,
+        224,
+        444,
+        702
+      ]
+    },
+    {
+      "name": "Defamation/Morphing",
+      "values": [
+        51,
+        31,
+        61,
+        36,
+        28
+      ]
+    },
+    {
+      "name": "Fake Profile",
+      "values": [
+        149,
+        123,
+        157,
+        225,
+        266
+      ]
+    },
+    {
+      "name": "Counterfeiting",
+      "values": [
+        9,
+        2,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "name": "Cyber Blackmailing/Threatening",
+      "values": [
+        303,
+        689,
+        696,
+        689,
+        601
+      ]
+    },
+    {
+      "name": "Fake News on Social Media",
+      "values": [
+        578,
+        179,
+        230,
+        209,
+        483
+      ]
+    },
+    {
+      "name": "Other Offences",
+      "values": [
+        2674,
+        2456,
+        2857,
+        2389,
+        4109
+      ]
+    },
+    {
+      "name": "Total Offences under IPC/BNS",
+      "values": [
+        20201,
+        25384,
+        33798,
+        41849,
+        56747
+      ]
+    },
+    {
+      "name": "Gambling Act (Online Gambling)",
+      "values": [
+        63,
+        27,
+        37,
+        87,
+        37
+      ]
+    },
+    {
+      "name": "Lotteries Act (Online Lotteries)",
+      "values": [
+        26,
+        4,
+        6,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Copy Right Act",
+      "values": [
+        49,
+        32,
+        27,
+        23,
+        30
+      ]
+    },
+    {
+      "name": "Trade Marks Act",
+      "values": [
+        5,
+        1,
+        14,
+        1,
+        6
+      ]
+    },
+    {
+      "name": "Other SLL Crimes",
+      "values": [
+        48,
+        99,
+        103,
+        223,
+        236
+      ]
+    },
+    {
+      "name": "Total Offences under SLL",
+      "values": [
+        191,
+        163,
+        187,
+        334,
+        309
+      ]
+    },
+    {
+      "name": "Total Cyber Crimes (A+B+C)",
+      "values": [
+        50035,
+        52974,
+        65893,
+        86420,
+        101928
+      ]
+    }
+  ],
+  "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2287039",
+  "publicationDate": "2026-07-21",
+  "reviewedAt": "2026-10-02",
+  "coverage": "Registered cybercrime cases; NCRB Crime in India, Annexures I\u2013II.",
+  "status": "snapshot",
+  "retrievedAt": null
+}

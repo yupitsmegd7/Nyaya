@@ -1,0 +1,50 @@
+import {readFileSync,writeFileSync,mkdtempSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url),ts=require('typescript');
+const root=new URL('../',import.meta.url),temp=mkdtempSync(join(tmpdir(),'nyaya-check-'));
+function compile(from,to,replace=[]){let source=readFileSync(new URL(from,root),'utf8');for(const [a,b]of replace)source=source.replaceAll(a,b);writeFileSync(join(temp,to),ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true,resolveJsonModule:true}}).outputText)}
+try{
+ for(const name of ['constitution','crime-catalogue','crime-snapshot','national-crime'])writeFileSync(join(temp,name+'.json'),readFileSync(new URL('lib/'+name+'.json',root)));
+ compile('lib/legal-data.ts','legal-data.js');compile('lib/ask.ts','ask.js');
+ writeFileSync(join(temp,'env.js'),'exports.env = {};');
+ compile('app/api/ask/route.ts','route.js',[["'cloudflare:workers'","'./env'"],["'@/lib/ask'","'./ask'"]]);
+ const {laws,crimeLaws,constitutionalLaws,guides,sources}=require(join(temp,'legal-data.js'));
+ const {retrieve,officialUrl,generateAnswer}=require(join(temp,'ask.js'));
+ const all=[...laws,...crimeLaws];assert.equal(new Set(all.map(l=>l.id)).size,all.length);
+ const partIII=[...Array.from({length:24},(_,i)=>String(i+12)),'21A','31A','31B','31C','31D','32A'].sort();
+ const partIV=[...Array.from({length:16},(_,i)=>String(i+36)),'39A','43A','43B','48A'].sort();
+ assert.deepEqual(constitutionalLaws.filter(l=>l.part==='III').map(l=>l.article).sort(),partIII);
+ assert.deepEqual(constitutionalLaws.filter(l=>l.part==='IV').map(l=>l.article).sort(),partIV);
+ assert.equal(laws.length,76);assert.equal(crimeLaws.length,48);
+ for(const l of all){assert(sources[l.source]);assert(officialUrl(sources[l.source].url));assert(l.quote&&l.meaning&&l.note)}
+ for(const g of guides)for(const id of g.lawIds)assert(laws.some(l=>l.id===id),id);
+ const stats=require(join(temp,'national-crime.json'));for(let i=0;i<3;i++)assert.equal(stats.series[0].values[i],stats.series[1].values[i]+stats.series[2].values[i]);
+ const cyber=require(join(temp,'crime-snapshot.json'));for(let i=0;i<5;i++)assert.equal(cyber.states.filter(s=>s.name!=='All India').reduce((n,s)=>n+s.values[i],0),cyber.states.find(s=>s.name==='All India').values[i]);
+ assert.equal(retrieve('Explain Article 19').references[0].id,'art19');
+ assert.equal(retrieve('Explain Article 21A').references[0].id,'art21A');
+ assert.equal(retrieve('Explain BNS section 356').references[0].section,356);
+ assert(retrieve('My phone was stolen').references.some(l=>l.section===303));
+ assert(retrieve('I was injured in a road accident and the hospital wants payment').guideIds.includes('accident'));
+ assert(retrieve('I was arrested by police','','2020-05-01').warning);
+ assert.equal(retrieve('pasta recipe').references.length,0);
+ assert(!officialUrl('https://mha.gov.in.evil.test/'));assert(!officialUrl('javascript:alert(1)'));
+ const base=retrieve('Explain Article 21');
+ const mockResponse=(url)=>async()=>Response.json({status:'completed',output:[{type:'message',role:'assistant',content:[{type:'output_text',text:'See [1].',annotations:[{type:'url_citation',url,title:'Source',start_index:4,end_index:7}]}]}]});
+ const ai=await generateAnswer(base,'Explain Article 21','test-only-not-a-key','gpt-4.1-mini',mockResponse('https://www.indiacode.nic.in/'));assert.equal(ai.mode,'ai');
+ await assert.rejects(()=>generateAnswer(base,'test','test-only-not-a-key','model',mockResponse('https://example.com')));
+ await assert.rejects(()=>generateAnswer(base,'test','test-only-not-a-key','model',async()=>Response.json({}, {status:401})));
+ await assert.rejects(()=>generateAnswer(base,'test','test-only-not-a-key','model',async()=>Response.json({output:[]})));
+ const route=require(join(temp,'route.js'));
+ const req=(body,ip='test',origin='https://nyaya.test')=>new Request('https://nyaya.test/api/ask',{method:'POST',headers:{'Content-Type':'application/json','cf-connecting-ip':ip,Origin:origin},body:JSON.stringify(body)});
+ assert.equal((await route.GET()).status,200);
+ assert.equal((await route.POST(req({situation:'a'},'short'))).status,400);
+ assert.equal((await route.POST(req({situation:'a'.repeat(2001)},'long'))).status,400);
+ assert.equal((await route.POST(req({situation:'I was arrested'},'origin','https://evil.test'))).status,403);
+ const result=await(await route.POST(req({situation:'Explain Article 19'},'valid'))).json();assert.equal(result.mode,'retrieval');assert.equal(result.references[0].id,'art19');
+ for(let i=0;i<6;i++)assert.equal((await route.POST(req({situation:'Explain Article 19'},'limit'))).status,200);
+ assert.equal((await route.POST(req({situation:'Explain Article 19'},'limit'))).status,429);
+ console.log('PASS: complete Part III/IV coverage; 76 law entries; 48 crime entries; guide references; official domains; both statistical reconciliations; retrieval, date warning, AI citation validation and fallback errors; API validation, origin and rate limit.');
+}finally{rmSync(temp,{recursive:true,force:true})}

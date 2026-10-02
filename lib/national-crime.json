@@ -1,0 +1,84 @@
+{
+  "years": [
+    2020,
+    2021,
+    2022
+  ],
+  "sourceUrl": "https://www.mha.gov.in/sites/default/files/AREnglish_24032026.pdf",
+  "sourceTitle": "Ministry of Home Affairs Annual Report 2024\u201325 \u00b7 Chapter IV, pp. 53\u201359 \u00b7 source: NCRB",
+  "reviewedAt": "2026-10-02",
+  "series": [
+    {
+      "name": "Total cognizable crimes (IPC + SLL)",
+      "values": [
+        6601285,
+        6096310,
+        5824946
+      ]
+    },
+    {
+      "name": "Indian Penal Code (IPC)",
+      "values": [
+        4254356,
+        3663360,
+        3561379
+      ]
+    },
+    {
+      "name": "Special & Local Laws (SLL)",
+      "values": [
+        2346929,
+        2432950,
+        2263567
+      ]
+    },
+    {
+      "name": "Murder",
+      "values": [
+        29193,
+        29272,
+        28522
+      ]
+    },
+    {
+      "name": "Kidnapping & abduction",
+      "values": [
+        84805,
+        101707,
+        107588
+      ]
+    },
+    {
+      "name": "Total violent crimes",
+      "values": [
+        400006,
+        413497,
+        434108
+      ]
+    },
+    {
+      "name": "Crimes against women",
+      "values": [
+        371503,
+        428278,
+        445256
+      ]
+    },
+    {
+      "name": "Crimes against children",
+      "values": [
+        128531,
+        149404,
+        162449
+      ]
+    },
+    {
+      "name": "Economic offences",
+      "values": [
+        145754,
+        174013,
+        193385
+      ]
+    }
+  ]
+}
